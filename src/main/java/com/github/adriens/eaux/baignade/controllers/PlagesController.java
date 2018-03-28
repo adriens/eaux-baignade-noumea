@@ -7,6 +7,7 @@ package com.github.adriens.eaux.baignade.controllers;
 
 import com.github.adriens.eaux.baignade.domain.Drapeau;
 import com.github.adriens.eaux.baignade.domain.PlageDetails;
+import com.github.adriens.eaux.baignade.sdk.CouleurDrapeau;
 import com.github.adriens.eaux.baignade.services.PlagesService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -56,5 +57,11 @@ public class PlagesController {
     @RequestMapping("/drapeaux")
     public List<Drapeau> getDrapeaux() {
         return plagesService.getDrapeaux();
+    }
+    
+    @RequestMapping("/drapeaux/{drapeauId}")
+    public Drapeau getDrapeau(
+            @PathVariable(value = "drapeauId") String drapeauId) throws Exception {
+        return plagesService.getDrapeau(drapeauId);
     }
 }
