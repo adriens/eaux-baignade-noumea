@@ -5,6 +5,7 @@
  */
 package com.github.adriens.eaux.baignade.controllers;
 
+import com.github.adriens.eaux.baignade.domain.Drapeau;
 import com.github.adriens.eaux.baignade.domain.PlageDetails;
 import com.github.adriens.eaux.baignade.services.PlagesService;
 import java.util.List;
@@ -28,9 +29,10 @@ public class PlagesController {
     PlagesService plagesService;
 
     @RequestMapping("/")
-    public String hello(){
+    public String hello() {
         return "Qualité des eaux de baignade tels que fournies sur http://www.noumea.nc/actualites/qualite-des-eaux-de-baignade-0";
     }
+
     @RequestMapping("/plages")
     public List<PlageDetails> getAllPlages() throws Exception {
         try {
@@ -40,14 +42,19 @@ public class PlagesController {
         }
 
     }
-    
+
     @RequestMapping("/plages/{plageId}")
-    public PlageDetails getPlageDetails (
+    public PlageDetails getPlageDetails(
             @PathVariable(value = "plageId") int plageId) throws Exception {
         try {
             return plagesService.getDetailsOfPlage(plageId);
         } catch (Exception ex) {
             throw ex;
         }
-}
+    }
+
+    @RequestMapping("/drapeaux")
+    public List<Drapeau> getDrapeaux() {
+        return plagesService.getDrapeaux();
+    }
 }
