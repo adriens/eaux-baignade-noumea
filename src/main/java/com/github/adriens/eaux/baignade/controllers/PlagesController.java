@@ -29,7 +29,7 @@ public class PlagesController {
 
     @RequestMapping("/")
     public String hello(){
-        return "Hello";
+        return "Qualité des eaux de baignade tels que fournies sur http://www.noumea.nc/actualites/qualite-des-eaux-de-baignade-0";
     }
     @RequestMapping("/plages")
     public List<PlageDetails> getAllPlages() throws Exception {
