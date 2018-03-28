@@ -35,6 +35,12 @@ public class PlagesService {
     
     public List<Drapeau> getDrapeaux(){
         return Drapeau.getDrapeaux().values().stream().collect(Collectors.toList());
-       
+    }
+    
+    public Drapeau getDrapeau(CouleurDrapeau aCouleur){
+        return Drapeau.getDrapeaux().get(aCouleur);
+    }
+    public Drapeau getDrapeau(String aCouleur){
+        return Drapeau.getDrapeaux().get(CouleurDrapeau.valueOf(aCouleur.toUpperCase()));
     }
 }
