@@ -8,5 +8,5 @@ API pour accéder à la qualité des eaux de baignade, via le crawling de www.no
 
 ```
 /plages
-/plage/{plageId}
+/plages/{plageId}
 ```
