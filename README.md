@@ -15,5 +15,5 @@ Sur Heroku :
 
 ```
 https://eaux-baignade-noumea.herokuapp.com/plages
-https://eaux-baignade-noumea.herokuapp.com/plages/0
+https://eaux-baignade-noumea.herokuapp.com/plages/{plageId}
 ```
