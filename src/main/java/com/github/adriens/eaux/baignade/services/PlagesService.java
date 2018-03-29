@@ -6,13 +6,12 @@
 package com.github.adriens.eaux.baignade.services;
 
 import com.github.adriens.eaux.baignade.domain.Drapeau;
+import com.github.adriens.eaux.baignade.domain.PageMetaDatas;
 import com.github.adriens.eaux.baignade.domain.PlageDetails;
 import com.github.adriens.eaux.baignade.sdk.CouleurDrapeau;
 import com.github.adriens.eaux.baignade.sdk.SiteCrawler;
-import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -42,5 +41,9 @@ public class PlagesService {
     }
     public Drapeau getDrapeau(String aCouleur){
         return Drapeau.getDrapeaux().get(CouleurDrapeau.valueOf(aCouleur.toUpperCase()));
+    }
+    
+    public PageMetaDatas getPageMetaDatas() throws Exception {
+        return SiteCrawler.getPageMetaDatas();
     }
 }

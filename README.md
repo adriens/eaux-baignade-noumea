@@ -12,6 +12,7 @@ API pour accéder à la qualité des eaux de baignade, via le crawling de www.no
 /plages/{plageId}
 /drapeaux
 /drapeaux/{drapeauId}
+/metadatas
 ```
 
 Sur Heroku :
@@ -21,4 +22,5 @@ https://eaux-baignade-noumea.herokuapp.com/plages
 https://eaux-baignade-noumea.herokuapp.com/plages/{plageId}
 https://eaux-baignade-noumea.herokuapp.com/drapeaux
 https://eaux-baignade-noumea.herokuapp.com/drapeaux/{drapeauId}
+https://eaux-baignade-noumea.herokuapp.com/metadatas
 ```
