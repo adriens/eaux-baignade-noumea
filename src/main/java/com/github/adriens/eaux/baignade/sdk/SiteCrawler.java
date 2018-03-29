@@ -7,16 +7,24 @@ package com.github.adriens.eaux.baignade.sdk;
 
 import com.gargoylesoftware.htmlunit.BrowserVersion;
 import com.gargoylesoftware.htmlunit.WebClient;
+import com.gargoylesoftware.htmlunit.html.HtmlAnchor;
 import com.gargoylesoftware.htmlunit.html.HtmlPage;
 import com.gargoylesoftware.htmlunit.html.HtmlTable;
 import com.gargoylesoftware.htmlunit.html.HtmlTableRow;
+import com.github.adriens.eaux.baignade.domain.PageMetaDatas;
 import com.github.adriens.eaux.baignade.domain.PlageDetails;
+import java.io.IOException;
 import java.net.URL;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -110,7 +118,22 @@ public class SiteCrawler {
 
         return out;
     }
-
+    
+    public static final Date getLastUpdateDate() throws Exception {
+        WebClient webClient = buildWebClient();
+        HtmlPage htmlPage = webClient.getPage(URL_BAIGNADE);
+        HtmlAnchor lastUpdateDate = htmlPage.getFirstByXPath("/html/body/div[1]/div[3]/div/div[2]/div/div/div[1]/h5[2]/a");
+        return extractDateFromLastUpdateText(lastUpdateDate.asText());
+    }
+    
+    public static final Date extractDateFromLastUpdateText(String text) throws ParseException {
+        Date out;
+        String tmp = text;
+        tmp = tmp.replace("QUALITE DES EAUX DE BAIGNADE AU ", "");
+        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+        out = formatter.parse(tmp);
+        return out;
+    }
     public static final PlageDetails getDetailsOfPlage(int i) throws Exception {
         return getPlagesStatus().get(i);
     }
@@ -126,6 +149,10 @@ public static final List<PlageDetails> getPlagesDetails() throws Exception {
             out.add(value);
         }
         return out;
+    }
+
+    public static final PageMetaDatas getPageMetaDatas() throws Exception {
+        return new PageMetaDatas();
     }
 
     public static final HashMap<Integer, String> getPlages() throws Exception {
@@ -144,7 +171,8 @@ public static final List<PlageDetails> getPlagesDetails() throws Exception {
     public static void main(String[] args) {
         try {
             //SiteCrawler.getPlagesStatus();
-            System.out.println(SiteCrawler.getDetailsOfPlage(4).toString());
+                    System.out.println(SiteCrawler.getLastUpdateDate());
+                    
         } catch (Exception ex) {
             ex.printStackTrace();
         }
