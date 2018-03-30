@@ -24,3 +24,7 @@ https://eaux-baignade-noumea.herokuapp.com/drapeaux
 https://eaux-baignade-noumea.herokuapp.com/drapeaux/{drapeauId}
 https://eaux-baignade-noumea.herokuapp.com/metadatas
 ```
+
+# Documentation swagger
+
+Bien que minimaliste et très perfectible, la doc swagger : https://eaux-baignade-noumea.herokuapp.com/swagger-ui.html

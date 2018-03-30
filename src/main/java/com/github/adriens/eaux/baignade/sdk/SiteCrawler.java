@@ -13,7 +13,6 @@ import com.gargoylesoftware.htmlunit.html.HtmlTable;
 import com.gargoylesoftware.htmlunit.html.HtmlTableRow;
 import com.github.adriens.eaux.baignade.domain.PageMetaDatas;
 import com.github.adriens.eaux.baignade.domain.PlageDetails;
-import java.io.IOException;
 import java.net.URL;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -83,8 +82,8 @@ public class SiteCrawler {
             return new URL(URL_IMG_DRAPEAU_BLEU);
         } else if (color == CouleurDrapeau.JAUNE) {
             return new URL(URL_IMG_DRAPEAU_JAUNE);
-        } else if (color == CouleurDrapeau.BLEU) {
-            return new URL(URL_IMG_DRAPEAU_BLEU);
+        } else if (color == CouleurDrapeau.ROUGE) {
+            return new URL(URL_IMG_DRAPEAU_ROUGE);
         } else {
             throw new Exception("Not able to return URL for unknow color : " + color);
         }
@@ -170,8 +169,8 @@ public static final List<PlageDetails> getPlagesDetails() throws Exception {
 
     public static void main(String[] args) {
         try {
-            //SiteCrawler.getPlagesStatus();
-                    System.out.println(SiteCrawler.getLastUpdateDate());
+            SiteCrawler.getPlagesStatus();
+                    //System.out.println(SiteCrawler.getLastUpdateDate());
                     
         } catch (Exception ex) {
             ex.printStackTrace();
