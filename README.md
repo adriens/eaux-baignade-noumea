@@ -1,5 +1,4 @@
 [![Build Status](https://travis-ci.org/adriens/eaux-baignade-noumea.svg?branch=master)](https://travis-ci.org/adriens/eaux-baignade-noumea)
-[![Dependency Status](https://beta.gemnasium.com/badges/github.com/adriens/eaux-baignade-noumea.svg)](https://beta.gemnasium.com/projects/github.com/adriens/eaux-baignade-noumea)
 
 # eaux-baignade-noumea
 
