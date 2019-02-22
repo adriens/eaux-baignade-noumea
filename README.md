@@ -16,7 +16,9 @@ Pour avoir le badge au format svg du status de la plage :
 En html :
 
 ```html
-<img src="https://eaux-baignade-noumea.herokuapp.com/plages/0/badge.svg"/>
+<a href="https://www.noumea.nc/actualites/qualite-des-eaux-de-baignade-0">
+  <img src="https://eaux-baignade-noumea.herokuapp.com/plages/0/badge.svg"/>
+</a>
 ```
 
 # Endpoints
