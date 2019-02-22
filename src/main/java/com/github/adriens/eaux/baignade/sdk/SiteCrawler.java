@@ -170,6 +170,7 @@ public static final List<PlageDetails> getPlagesDetails() throws Exception {
     public static void main(String[] args) {
         try {
             SiteCrawler.getPlagesStatus();
+            
                     //System.out.println(SiteCrawler.getLastUpdateDate());
                     
         } catch (Exception ex) {
