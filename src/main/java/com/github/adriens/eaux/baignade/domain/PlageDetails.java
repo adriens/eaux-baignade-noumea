@@ -52,6 +52,21 @@ public class PlageDetails {
     public CouleurDrapeau getCouleurDrapeau() {
         return couleurDrapeau;
     }
+    public String getCouleurDrapeauEnglish() {
+        String out = "";
+        if(getCouleurDrapeau() == CouleurDrapeau.BLEU){
+            return "blue";
+        }
+        else if(getCouleurDrapeau() == CouleurDrapeau.JAUNE){
+            return "yellow";
+        }
+        else if(getCouleurDrapeau() == CouleurDrapeau.ROUGE){
+            return "red";
+        }
+        else {
+            return "Unknown";
+        }
+    }
 
     /**
      * @param couleurDrapeau the couleurDrapeau to set
@@ -91,5 +106,22 @@ public class PlageDetails {
         String out;
         out = "Plage id : <" + getPlageId() + "> : " + getNomPlage() + "/" + getCouleurDrapeau() + ":" + getUrlIconeDrapeau();
         return out;
+    }
+    
+    public String getBaignadeMessage(){
+        String out = "";
+        if(getCouleurDrapeau() == CouleurDrapeau.BLEU){
+            return "Enjoy !";
+        }
+        else if(getCouleurDrapeau() == CouleurDrapeau.JAUNE){
+            return "Avoid swim...";
+        }
+        else if(getCouleurDrapeau() == CouleurDrapeau.ROUGE){
+            return "Swim forbidden !";
+        }
+        else {
+            return "Unknown";
+        }
+        
     }
 }
