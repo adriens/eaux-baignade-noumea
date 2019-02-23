@@ -67,6 +67,7 @@ public class PlageDetails {
             return "Unknown";
         }
     }
+    
 
     /**
      * @param couleurDrapeau the couleurDrapeau to set
