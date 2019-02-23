@@ -13,6 +13,14 @@ Pour avoir le badge au format svg du status de la plage :
 /plages/{plageId}/badge.svg
 ```
 
+# Shield Endpoint
+
+[Shield endpoint](https://shields.io/endpoint) is implemented for an optimal experience :
+
+```
+https://eaux-baignade-noumea.herokuapp.com/plages/{plageId}/shield
+```
+
 En html :
 
 ```html
