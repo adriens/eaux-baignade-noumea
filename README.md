@@ -37,9 +37,11 @@ En html :
 ```
 /plages
 /plages/{plageId}
+/plages/{plageId}/badge.svg
 /drapeaux
 /drapeaux/{drapeauId}
 /metadatas
+https://eaux-baignade-noumea.herokuapp.com/plages/{plageId}/shield
 ```
 
 Sur Heroku :
@@ -47,9 +49,11 @@ Sur Heroku :
 ```
 https://eaux-baignade-noumea.herokuapp.com/plages
 https://eaux-baignade-noumea.herokuapp.com/plages/{plageId}
+https://eaux-baignade-noumea.herokuapp.com/plages/badge.svg
 https://eaux-baignade-noumea.herokuapp.com/drapeaux
 https://eaux-baignade-noumea.herokuapp.com/drapeaux/{drapeauId}
 https://eaux-baignade-noumea.herokuapp.com/metadatas
+https://eaux-baignade-noumea.herokuapp.com/plages/{plageId}/shield
 ```
 
 # Documentation swagger
