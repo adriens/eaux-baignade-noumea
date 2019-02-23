@@ -8,6 +8,7 @@ package com.github.adriens.eaux.baignade.services;
 import com.github.adriens.eaux.baignade.domain.Drapeau;
 import com.github.adriens.eaux.baignade.domain.PageMetaDatas;
 import com.github.adriens.eaux.baignade.domain.PlageDetails;
+import com.github.adriens.eaux.baignade.domain.ShieldEndpointResponse;
 import com.github.adriens.eaux.baignade.sdk.CouleurDrapeau;
 import com.github.adriens.eaux.baignade.sdk.SiteCrawler;
 import java.util.List;
@@ -45,5 +46,9 @@ public class PlagesService {
     
     public PageMetaDatas getPageMetaDatas() throws Exception {
         return SiteCrawler.getPageMetaDatas();
+    }
+    
+    public ShieldEndpointResponse getShieldResponse(int plageId) throws Exception {
+        return SiteCrawler.getShieldResponse(plageId);
     }
 }

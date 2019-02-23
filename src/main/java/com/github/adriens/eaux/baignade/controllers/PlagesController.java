@@ -8,6 +8,7 @@ package com.github.adriens.eaux.baignade.controllers;
 import com.github.adriens.eaux.baignade.domain.Drapeau;
 import com.github.adriens.eaux.baignade.domain.PageMetaDatas;
 import com.github.adriens.eaux.baignade.domain.PlageDetails;
+import com.github.adriens.eaux.baignade.domain.ShieldEndpointResponse;
 import com.github.adriens.eaux.baignade.services.PlagesService;
 import com.google.common.net.HttpHeaders;
 import com.google.common.net.UrlEscapers;
@@ -98,5 +99,16 @@ public class PlagesController {
         org.springframework.http.HttpHeaders httpHeaders = new org.springframework.http.HttpHeaders();
         httpHeaders.setLocation(uri);
         return new ResponseEntity<>(httpHeaders, HttpStatus.SEE_OTHER);
+    }
+    
+    // SHields dedicated endpoint
+    @RequestMapping("/plages/{plageId}/shield")
+    public ShieldEndpointResponse getShieldResponse(
+            @PathVariable(value = "plageId") int plageId) throws Exception {
+        try {
+            return plagesService.getShieldResponse(plageId);
+        } catch (Exception ex) {
+            throw ex;
+        }
     }
 }

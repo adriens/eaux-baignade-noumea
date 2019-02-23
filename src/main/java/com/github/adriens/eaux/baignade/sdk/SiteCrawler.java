@@ -13,6 +13,7 @@ import com.gargoylesoftware.htmlunit.html.HtmlTable;
 import com.gargoylesoftware.htmlunit.html.HtmlTableRow;
 import com.github.adriens.eaux.baignade.domain.PageMetaDatas;
 import com.github.adriens.eaux.baignade.domain.PlageDetails;
+import com.github.adriens.eaux.baignade.domain.ShieldEndpointResponse;
 import java.net.URL;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -167,6 +168,9 @@ public static final List<PlageDetails> getPlagesDetails() throws Exception {
         return out;
     }
 
+    public static final ShieldEndpointResponse getShieldResponse(int plageId) throws Exception{
+        return new ShieldEndpointResponse(SiteCrawler.getDetailsOfPlage(plageId));
+    }
     public static void main(String[] args) {
         try {
             SiteCrawler.getPlagesStatus();
