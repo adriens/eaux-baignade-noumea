@@ -15,19 +15,19 @@ public class ShieldEndpointResponse {
 
     private int schemaVersion = 1;
     private String label;
-    private String messsage;
+    private String message;
     private String color;
     
     public ShieldEndpointResponse(){}
     
     public ShieldEndpointResponse(String label, String message, String color){
         setLabel(label);
-        setMesssage(messsage);
+        setMessage(this.message);
         setColor(color);
     }
     public ShieldEndpointResponse(PlageDetails plage){
         setLabel(WordUtils.capitalizeFully(plage.getNomPlage()));
-        setMesssage(plage.getBaignadeMessage());
+        setMessage(plage.getBaignadeMessage());
         setColor(plage.getCouleurDrapeauEnglish());
     }
     /**
@@ -61,15 +61,15 @@ public class ShieldEndpointResponse {
     /**
      * @return the messsage
      */
-    public String getMesssage() {
-        return messsage;
+    public String getMessage() {
+        return message;
     }
 
     /**
-     * @param messsage the messsage to set
+     * @param message the messsage to set
      */
-    public void setMesssage(String messsage) {
-        this.messsage = messsage;
+    public void setMessage(String messsage) {
+        this.message = messsage;
     }
 
     /**
