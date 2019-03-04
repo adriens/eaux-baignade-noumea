@@ -79,10 +79,13 @@ Démarrer l'image :
 docker run -p 8080:8080 eaux-baignades
 ```
 
-Ouvrir le navigateur et tester un endpoint :
+[Installer jq](https://stedolan.github.io/jq/download/) puis :
+
+Ouvrir terminal et tester un endpoint ( [jq](https://stedolan.github.io/jq/)
+pour afficher proprement):
 
 ```
-firefox localhost:8080/plages
+curl http://localhost:8080/plages | jq '.' | less
 ```
 
 # Documentation swagger
