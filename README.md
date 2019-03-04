@@ -56,6 +56,35 @@ https://eaux-baignade-noumea.herokuapp.com/metadatas
 https://eaux-baignade-noumea.herokuapp.com/plages/{plageId}/shield
 ```
 
+# Docker
+
+A terme, je vais automatiser le buid, démarrer, jusqu'à la release
+de l'image sur les repos.
+
+Créer l'image :
+
+```
+docker build -f DockerFile -t eaux-baignades
+```
+
+Lister les images :
+
+```
+docker images
+```
+
+Démarrer l'image :
+
+```
+docker run -p 8080:8080 eaux-baignades
+```
+
+Ouvrir le navigateur et tester un endpoint :
+
+```
+firefox localhost:8080/plages
+```
+
 # Documentation swagger
 
 Bien que minimaliste et très perfectible, la doc swagger : https://eaux-baignade-noumea.herokuapp.com/swagger-ui.html
