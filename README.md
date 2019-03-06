@@ -64,7 +64,7 @@ de l'image sur les repos.
 Créer l'image :
 
 ```
-docker build -f DockerFile -t eaux-baignades
+docker build -t eaux-baignades .
 ```
 
 Lister les images :
@@ -76,8 +76,16 @@ docker images
 Démarrer l'image :
 
 ```
-docker run -p 8080:8080 eaux-baignades
+docker run --net=host -p 8080:8080 eaux-baignades
 ```
+
+Lister les images qui tournent :
+
+```
+CONTAINER ID        IMAGE               COMMAND               
+3b71740fda19        eaux-baignades      "java -jar eaux-baig…"
+```
+
 
 [Installer jq](https://stedolan.github.io/jq/download/) puis :
 
@@ -86,6 +94,23 @@ pour afficher proprement):
 
 ```
 curl http://localhost:8080/plages | jq '.' | less
+```
+
+Vous devriez obtenir quelque chose comme ça :
+
+```
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  1291    0  1291    0     0    904      0 --:--:--  0:00:01 --:--:--   904
+[
+  {
+    "couleurDrapeau": "BLEU",
+    "nomPlage": "PLAGE DE LA POINTE MAGNIN",
+    "urlIconeDrapeau": "http://www.noumea.nc/sites/default/files/drapeau-bleu.png",
+    "plageId": 0,
+    "baignadeMessage": "Enjoy !",
+    "couleurDrapeauEnglish": "blue"
+  },
 ```
 
 # Documentation swagger
