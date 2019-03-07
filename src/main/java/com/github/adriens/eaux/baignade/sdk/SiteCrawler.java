@@ -129,7 +129,7 @@ public class SiteCrawler {
     public static final Date extractDateFromLastUpdateText(String text) throws ParseException {
         Date out;
         String tmp = text;
-        tmp = tmp.replace("QUALITÉ DES EAUX DE BAIGNADE AU ", "");
+        tmp = tmp.replace("QUALITÉ DES EAUX DE BAIGNADE : ", "");
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
         out = formatter.parse(tmp);
         return out;
