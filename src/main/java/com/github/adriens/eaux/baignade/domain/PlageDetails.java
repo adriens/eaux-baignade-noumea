@@ -6,6 +6,7 @@
 package com.github.adriens.eaux.baignade.domain;
 
 import com.github.adriens.eaux.baignade.sdk.CouleurDrapeau;
+import com.github.adriens.eaux.baignade.sdk.SiteCrawler;
 import java.net.URL;
 
 
@@ -14,6 +15,30 @@ import java.net.URL;
  * @author salad74
  */
 public class PlageDetails {
+
+    /**
+     * @return the videoStreamURL
+     */
+    public String getVideoStreamURL() {
+        return videoStreamURL;
+    }
+
+    /**
+     * @param videoStreamURL the videoStreamURL to set
+     */
+    public void setVideoStreamURL(String videoStreamURL) {
+        this.videoStreamURL = videoStreamURL;
+    }
+    
+    public void setVideoStreamURL(){
+        if(this.nomPlage.equalsIgnoreCase(SiteCrawler.ID_BAIE_DES_CITRONS)){
+            this.videoStreamURL = SiteCrawler.URL_STREAM_BAIE_DES_CITRONS;
+        }
+        else if (this.nomPlage.equalsIgnoreCase(SiteCrawler.ID_ANSE_VATA)){
+            this.videoStreamURL = SiteCrawler.URL_STREAM_ANSE_VATA;
+        }
+        
+    }
 
     /**
      * @return the plageId
@@ -33,6 +58,7 @@ public class PlageDetails {
     private String nomPlage;
     private URL urlIconeDrapeau;
     private int plageId;
+    private String videoStreamURL;
     
     
     public PlageDetails(){
@@ -44,6 +70,7 @@ public class PlageDetails {
         setNomPlage(aNomPlage);
         setUrlIconeDrapeau(urlDrapeau);
         setPlageId(plageId);
+        setVideoStreamURL();
         
     }
     /**
