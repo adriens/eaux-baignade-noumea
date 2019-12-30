@@ -5,7 +5,7 @@
 
     <groupId>com.github.adriens</groupId>
     <artifactId>eaux-baignade-noumea</artifactId>
-    <version>1.5-SNAPSHOT</version>
+    <version>1.5</version>
     <packaging>jar</packaging>
 
     <name>API des eaux de baignade de Nouméa</name>
