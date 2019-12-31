@@ -37,6 +37,10 @@ public class PlageDetails {
         else if (this.nomPlage.equalsIgnoreCase(SiteCrawler.ID_ANSE_VATA)){
             this.videoStreamURL = SiteCrawler.URL_STREAM_ANSE_VATA;
         }
+        else if (this.nomPlage.equalsIgnoreCase(SiteCrawler.ID_KUENDU_BEACH)){
+            this.videoStreamURL = SiteCrawler.URL_STREAM_KUENDU_BEACH;
+        }
+        
         
     }
 

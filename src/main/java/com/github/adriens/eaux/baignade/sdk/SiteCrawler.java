@@ -46,6 +46,7 @@ public class SiteCrawler {
     
     public static final String URL_STREAM_ANSE_VATA = "https://youtu.be/Fzo8jORoQMo";
     public static final String URL_STREAM_BAIE_DES_CITRONS = "https://youtu.be/2u4CwVllO_w";
+    public static final String URL_STREAM_KUENDU_BEACH = "https://youtu.be/zWRje-OXWvc";
     
     public static final String PATH_IMG_DRAPEAU_BLEU = "/sites/default/files/drapeau-bleu.png";
     public static final String PATH_IMG_DRAPEAU_JAUNE = "/sites/default/files/drapeau-jaune.png";
